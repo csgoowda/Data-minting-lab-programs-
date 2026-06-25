@@ -1,3 +1,6 @@
+# Question 2: What attributes are crucial in making credit assessment?
+# Aim: Use a Decision Tree's feature importance to identify important attributes.
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
@@ -14,8 +17,15 @@ for column in dataset.columns:
         dataset[column] = label_encoder.fit_transform(dataset[column])
 
 # Features and Target
-X = dataset.drop('class', axis=1)
-y = dataset['class']
+# Supports either class label naming style
+if 'class' in dataset.columns:
+    X = dataset.drop('class', axis=1)
+    y = dataset['class']
+elif 'credit_risk' in dataset.columns:
+    X = dataset.drop('credit_risk', axis=1)
+    y = dataset['credit_risk']
+else:
+    raise ValueError("Target column not found. Expected 'class' or 'credit_risk'.")
 
 # Split Dataset
 X_train, X_test, y_train, y_test = train_test_split(
