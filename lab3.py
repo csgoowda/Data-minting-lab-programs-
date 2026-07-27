@@ -64,6 +64,7 @@ plot_tree(
 )
 plt.show()
 
+
 # Viva Questions
 
 # 1. What is a Decision Tree?
