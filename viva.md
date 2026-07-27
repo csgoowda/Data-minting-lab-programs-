@@ -709,25 +709,169 @@ Cluster 2 → Senior Customers
 
 ---
 
-## ⭐ Final 20 Most Expected Viva Questions
 
-1. What is Data Mining?
-2. What is KDD?
-3. Difference between KDD and Data Mining.
-4. Difference between Classification and Clustering.
-5. Difference between Supervised and Unsupervised Learning.
-6. What is a Decision Tree?
-7. What is Information Gain?
-8. Why do we use Label Encoding?
-9. What is Cross Validation?
-10. What is Overfitting?
-11. What is Pruning?
-12. What is OneR?
-13. What is PART?
-14. Difference between PART and OneR.
-15. What is K-Means?
-16. What is a Cluster?
-17. What is a Centroid?
-18. What is SVM?
-19. What is a Hyperplane?
-20. Difference between **J48, PART, and OneR**.
+---
+
+# Additional Important Viva Questions
+
+## Dataset Related
+
+### 1. What dataset did you use?
+
+**Answer:** German Credit Dataset (`credit-g.arff` / `GermanCredit.csv`) containing customer information used to classify credit risk.
+
+### 2. How many attributes are in the dataset?
+
+**Answer:** Around **20 input attributes** and **1 class attribute** (`class` or `credit_risk`), depending on the dataset version.
+
+### 3. What is the class attribute?
+
+**Answer:** `class` or `credit_risk`.
+
+### 4. What are categorical attributes?
+
+**Answer:** Attributes with text values such as `checking_status`, `purpose`, and `housing`.
+
+### 5. What are numerical attributes?
+
+**Answer:** Attributes with numeric values such as `duration`, `credit_amount`, and `age`.
+
+---
+
+# Python Related
+
+### 6. Why did you use Pandas?
+
+**Answer:** To load and manipulate the dataset.
+
+### 7. Why did you use Scikit-learn?
+
+**Answer:** To implement machine learning algorithms like Decision Tree, SVM, and K-Means.
+
+### 8. What is `train_test_split()`?
+
+**Answer:** It splits the dataset into training and testing sets.
+
+### 9. Why use `random_state=42`?
+
+**Answer:** To get the same results every time the program runs.
+
+### 10. What is `fit()`?
+
+**Answer:** It trains the model using the training data.
+
+### 11. What is `predict()`?
+
+**Answer:** It predicts the class labels for new or test data.
+
+### 12. What is `accuracy_score()`?
+
+**Answer:** It calculates the percentage of correct predictions.
+
+---
+
+# WEKA Related
+
+### 13. What is WEKA?
+
+**Answer:** WEKA is an open-source machine learning tool used for data mining tasks.
+
+### 14. What is J48?
+
+**Answer:** WEKA's implementation of the C4.5 Decision Tree algorithm.
+
+### 15. What is SMO?
+
+**Answer:** WEKA's implementation of the Support Vector Machine (SVM) algorithm.
+
+### 16. What is SimpleKMeans?
+
+**Answer:** WEKA's implementation of the K-Means clustering algorithm.
+
+### 17. Why did you use WEKA?
+
+**Answer:** To build, test, and compare machine learning models without writing much code.
+
+---
+
+# General ML Questions
+
+### 18. What is a model?
+
+**Answer:** A trained machine learning algorithm that can make predictions.
+
+### 19. What is training?
+
+**Answer:** The process of learning patterns from the training data.
+
+### 20. What is testing?
+
+**Answer:** Evaluating the trained model on unseen data.
+
+### 21. Why do we split the dataset?
+
+**Answer:** To evaluate how well the model performs on new data.
+
+### 22. Which model gave the highest accuracy in your experiments?
+
+**Answer:** Generally, **J48** (Decision Tree) or **SVM**, depending on the dataset.
+
+### 23. Which model was the simplest?
+
+**Answer:** **OneR**.
+
+### 24. Which model produced IF–THEN rules?
+
+**Answer:** **PART**.
+
+### 25. Which model performed clustering?
+
+**Answer:** **K-Means**.
+
+---
+
+# Program-Related Questions
+
+### 26. Why did you use Label Encoding before training?
+
+**Answer:** To convert categorical (text) values into numeric values because most algorithms require numerical input.
+
+### 27. Why did you use Cross Validation?
+
+**Answer:** To obtain a more reliable estimate of the model's performance.
+
+### 28. Why can't K-Means be used for classification?
+
+**Answer:** Because K-Means is an unsupervised algorithm and does not use class labels.
+
+### 29. Why can't OneR achieve high accuracy?
+
+**Answer:** Because it uses only one attribute for making decisions.
+
+### 30. Which algorithm is easiest to explain in a viva?
+
+**Answer:** Decision Tree.
+
+---
+
+# If the examiner asks "Tell me about your lab"
+
+A good answer is:
+
+> "In this Data Mining lab, I used the German Credit dataset and implemented algorithms like Decision Tree (J48), OneR, PART, K-Means, and SVM using Python and WEKA. I evaluated the models using accuracy, cross-validation, pruning, and feature selection, and compared their performance."
+
+---
+
+## Overall Coverage
+
+* ✅ Questions 1–12: Covered
+* ✅ Python code: Covered
+* ✅ WEKA steps: Covered
+* ✅ Theory: Covered
+* ✅ Viva questions: Covered
+* ✅ Dataset questions: Covered
+* ✅ WEKA questions: Covered
+* ✅ Python questions: Covered
+* ✅ ML basics: Covered
+
+
