@@ -11,60 +11,36 @@
 # 7. WEKA displays the ranked attributes.
 
 import pandas as pd
-from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import LabelEncoder
 
 # Load Dataset
-dataset = pd.read_csv('credit-g_csv.csv')
+data = pd.read_csv("credit-g_csv.csv")
 
 # Label Encoding
-label_encoder = LabelEncoder()
-
-for column in dataset.columns:
-    if dataset[column].dtype == 'object':
-        dataset[column] = label_encoder.fit_transform(dataset[column])
+le = LabelEncoder()
+for col in data.columns:
+    if data[col].dtype == "object":
+        data[col] = le.fit_transform(data[col])
 
 # Features and Target
-X = dataset.drop('class', axis=1)
-y = dataset['class']
-
-# Split Dataset
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
-)
+X = data.drop("class", axis=1)
+y = data["class"]
 
 # Train Decision Tree
-model = DecisionTreeClassifier(max_depth=6)
-model.fit(X_train, y_train)
+model = DecisionTreeClassifier(max_depth=6, random_state=42)
+model.fit(X, y)
 
 # Feature Importance
 importance = model.feature_importances_
 
-# Store IG Values
-attribute_ig = {}
+# Store and Sort
+result = sorted(zip(X.columns, importance), key=lambda x: x[1], reverse=True)
 
-for i, feature in enumerate(X.columns):
-    attribute_ig[feature] = importance[i]
-
-# Sort by Information Gain
-sorted_ig = sorted(
-    attribute_ig.items(),
-    key=lambda x: x[1],
-    reverse=True
-)
-
+# Print Top 6 Attributes
 print("Top Important Attributes:\n")
-
-for attribute, ig in sorted_ig[:6]:
-    print(attribute, ":", ig)
-
-
-this is correct
-
-
-for attribute, ig in sorted_ig[:6]:
-    print(attribute, ":", ig)
+for attribute, ig in result[:6]:
+    print(f"{attribute} : {ig:.4f}")
 
 # Viva Questions & Answers
 
