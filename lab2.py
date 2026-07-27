@@ -26,15 +26,8 @@ for column in dataset.columns:
         dataset[column] = label_encoder.fit_transform(dataset[column])
 
 # Features and Target
-# Supports either class label naming style
-if 'class' in dataset.columns:
-    X = dataset.drop('class', axis=1)
-    y = dataset['class']
-elif 'credit_risk' in dataset.columns:
-    X = dataset.drop('credit_risk', axis=1)
-    y = dataset['credit_risk']
-else:
-    raise ValueError("Target column not found. Expected 'class' or 'credit_risk'.")
+X = dataset.drop('class', axis=1)
+y = dataset['class']
 
 # Split Dataset
 X_train, X_test, y_train, y_test = train_test_split(
@@ -62,6 +55,13 @@ sorted_ig = sorted(
 )
 
 print("Top Important Attributes:\n")
+
+for attribute, ig in sorted_ig[:6]:
+    print(attribute, ":", ig)
+
+
+this is correct
+
 
 for attribute, ig in sorted_ig[:6]:
     print(attribute, ":", ig)
