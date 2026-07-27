@@ -35,6 +35,9 @@ print("Complex Tree Accuracy:", complex_acc)
 print("\nConclusion:")
 print("Simple Tree -> Higher Bias, Lower Variance")
 print("Complex Tree -> Lower Bias, Higher Variance")
+print("\nObservation:")
+print("- Simpler trees usually have higher bias and lower variance.")
+print("- Complex trees usually have lower bias and higher variance.")
 
 # What is the Question Asking?
 # The examiner wants to know:
@@ -82,6 +85,4 @@ print("Complex Tree -> Lower Bias, Higher Variance")
 # Answer: A balanced or pruned Decision Tree provides the best trade-off
 # between bias and variance.
 
-print("\nObservation:")
-print("- Simpler trees usually have higher bias and lower variance.")
-print("- Complex trees usually have lower bias and higher variance.")
+
