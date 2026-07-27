@@ -1,6 +1,15 @@
 # Question 2: What attributes are crucial in making credit assessment?
 # Aim: Use a Decision Tree's feature importance to identify important attributes.
 
+# WEKA Steps
+# 1. Open WEKA Explorer.
+# 2. Load credit-g.arff.
+# 3. Go to the Select attributes tab.
+# 4. Choose Attribute Evaluator → InfoGainAttributeEval.
+# 5. Choose Search Method → Ranker.
+# 6. Click Start.
+# 7. WEKA displays the ranked attributes.
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
